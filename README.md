@@ -4,3 +4,4 @@
 |---------------------|
 |[Fiche](./MICHEL.md)   |
 |[Fiche](./FINOANA.md)  |
+|[Fiche](./IHAJAINA.md)  |
