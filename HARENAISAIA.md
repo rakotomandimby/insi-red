@@ -1,11 +1,7 @@
 # PROFIL
 
-Nom: LOCK
+- Nom: LOCK
 
-Prenom: Isaia
+- Prenom: Isaia
 
-Adresse: Alasora
-
-Contact: 0342118810
-
-Email: lockisaia@gmail.com
+- Email: lockisaia@gmail.com
