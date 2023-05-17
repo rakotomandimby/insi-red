@@ -1,12 +1,6 @@
-# Test
+# Liste des fiches
 
-- Mihamina
-- RAKOTOMANDIMBY
-- mihamina@rktmb.org
-- 034 67 868 67
-
-
-|Lien vers la fichier |
+|Lien vers les fiches |
 |---------------------|
-|[Fiche](./MICHEL.md) |
-|[Fiche](./FINOANA.md)|
+|[Fiche](./MICHEL.md)   |
+|[Fiche](./FINOANA.md)  |
