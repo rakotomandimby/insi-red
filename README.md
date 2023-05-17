@@ -1,6 +1,10 @@
 # Liste des fiches
 
-|       Nom et Prénom            |Lien vers les fiches |
-|:------------------------------:|---------------------|
-|ONJANIRINA NOMENJANAHARY Michel |[Fiche](./MICHEL.md) |
-|                                |[Fiche](./FINOANA.md)|                    
+                    
+|Nom     |Lien vers les fiches  |
+|------- |--------------------- |
+|MICHEL  |[Fiche](./MICHEL.md)  |
+|Finoana |[Fiche](./FINOANA.md) |
+|Angelot |[Fiche](./ANGELOT.md) |
+|Ihajaina|[Fiche](./IHAJAINA.md)|
+
