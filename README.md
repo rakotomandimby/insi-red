@@ -8,4 +8,4 @@
 |Finoana  |[Fiche](./FINOANA.md)  |
 |Angelot  |[Fiche](./ANGELOT.md)  |
 |Ihajaina |[Fiche](./IHAJAINA.md) |
-|Fifaliana|[Fiche](./Fifaliana.md)|
+|Fifaliana|[Fiche](./FIFALIANA.md)|
