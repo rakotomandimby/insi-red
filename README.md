@@ -1,6 +1,7 @@
 # Liste des fiches
 
-|Lien vers les fiches |
-|---------------------|
-|[Fiche](./MICHEL.md)   |
-|[Fiche](./FINOANA.md)  |
+|Nom|Lien vers les fiches |
+|---|---------------------|
+||[Fiche](./MICHEL.md)   |
+||[Fiche](./FINOANA.md)  |
+|Angelot|[Fiche](./ANGELOT.md)  |
