@@ -3,4 +3,4 @@
  
  - Prénom : Fifaliana
  
- - Adresse email : fifalianajohaness@gmai.com
+ - Adresse email : fifalianajohaness@gmail.com
