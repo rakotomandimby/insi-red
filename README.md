@@ -9,3 +9,4 @@ Liste des fichiers
 |Ihajaina  |[Fiche](./IHAJAINA.md) |
 |Fifaliana |[Fiche](./FIFALIANA.md)|
 |Diamondra |[Fiche](./DIAMONDRA.md)|
+|LIANAH    |[Fiche](./LIANAH.md)   |
