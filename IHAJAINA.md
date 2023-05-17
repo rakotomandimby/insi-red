@@ -1,4 +1,4 @@
-# IHAJAINA
-. NOMENJANAHARY 
-. Ihajaina
-. Ihajaina.nomenjanahary1@gmail.com
+# MON PROFIL
+. Nom: NOMENJANAHARY 
+. Prenom: Ihajaina
+. Email: Ihajaina.nomenjanahary1@gmail.com
