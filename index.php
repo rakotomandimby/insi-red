@@ -1,9 +1,9 @@
  <?php
 $servername = "vps-2018.rktmb.org";
-$username = "insi";
-$password = "insi";
+$username = "root";
+$password = "";
 $database = "insi";
-$port = 33066
+$port = 3306;
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database, $port);
@@ -14,3 +14,4 @@ if ($conn->connect_error) {
 }
 echo "Connected successfully";
 
+?>
