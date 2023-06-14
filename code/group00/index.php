@@ -1,5 +1,5 @@
 <?php
-$servername = "localhost";
+$servername = "vps-2018.rktmb.org";
 $username = "insi";
 $password = "insi";
 $database = "insi";
@@ -15,3 +15,4 @@ if ($conn->connect_error) {
 echo "Connected successfully";
 
 ?>
+sdfsdfsdf
