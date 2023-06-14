@@ -1,5 +1,5 @@
 <?php
-$servername = "localhost";
+$servername = "127.0.0.1";
 $username = "insi";
 $password = "insi";
 $database = "insi";
@@ -15,3 +15,4 @@ if ($conn->connect_error) {
 echo "Connected successfully";
 
 ?>
+sdfsdfsdf
