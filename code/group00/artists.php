@@ -13,6 +13,8 @@ if ($conn->connect_error) {
 }
 echo "Connected successfully";
 $sql = "SELECT Name, Id FROM Artist";
+$result = mysqli_query($conn, $sql);
+
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
 	echo $row["Name"] . '   ' . $row["Id"] ; 
