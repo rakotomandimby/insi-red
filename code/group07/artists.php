@@ -16,7 +16,7 @@
 
     while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
         echo "<tr>";
-        echo "<td>" . $row["colonne1"] . "</td>";
+        echo "<td>" . $row["Name"] . "</td>";
         echo "</tr>";
     }
 
