@@ -25,7 +25,7 @@ if ($result->num_rows > 0) {
 
     $count = 1;
     while ($row = $result->fetch_assoc()) {
-        echo '<tr><td style="border: 1px solid black; padding: 8px;"><span style="color: red;">' . $count . '</span></td><td style="border: 1px solid black; padding: 8px;">' . $row["nom_Album"] . '</td></tr>';
+        echo '<tr><td style="border: 1px solid black; padding: 8px;"><span style="color: red;">' . $count . '</span></td><td style="border: 1px solid black; padding: 8px;">' . $row["Title"] . '</td></tr>';
         $count++;
     }
 
