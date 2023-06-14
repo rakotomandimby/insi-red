@@ -10,20 +10,21 @@
   <?php
   $sql = "SELECT * FROM Artist";
   $result = $connexion->query($sql);
-  if ($result->rowCount() > 0) {
-    echo "<table>";
-    echo "<tr><th>Colonne1</th></tr>";
+  $resultat=$result->fetchAll();
+  var_dump($resultat);
 
-    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-        echo "<tr>";
-        echo "<td>" . $row["Name"] . "</td>";
-        echo "</tr>";
-    }
+//   if ($resultat->rowCount() > 0) {
+//     echo "<ul>";
+    
+//     // Afficher les résultats
+//     foreach($resultat as $row ) {
+//         echo "<li>" . $row['Name'] . "</li>";
+//     }
 
-    echo "</table>";
-} else {
-    echo "Aucun résultat trouvé dans la table.";
-}
+//     echo "</ul>";
+// } else {
+//     echo "Aucun résultat trouvé dans la table.";
+// }
 ?>
 </body>
 </html>
