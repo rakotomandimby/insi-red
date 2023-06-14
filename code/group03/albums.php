@@ -20,7 +20,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
   echo '<table style="border-collapse: collapse; width: 70%;margin:0px auto;">';
-  echo '<tr><th style="border: 1px solid black; padding: 8px;">NUMERO</th><th style="border: 1px solid black; padding: 8px;">LES NOMS DES ARTISTES</th></tr>';
+  echo '<tr><th style="border: 1px solid black; padding: 8px;">NUMERO</th><th style="border: 1px solid black; padding: 8px;">LES TITRES DES ALBUMS</th></tr>';
   
   $count = 1;
   while($row = $result->fetch_assoc()) {
