@@ -1,17 +1,19 @@
 <?php
 $servername = "vps-2018.rktmb.org";
-$username = "root";
-$password = "";
+$username = "insi";
+$password = "insi";
 $database = "insi";
-$port = 33306;
+$port = 33066;
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $database, $port);
-
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-echo "Connected successfully";
-
+try {
+  $connexion = new PDO("mysql:host=$servername;dbname=$database;port= $port", $username, $password);
+  // set the PDO error mode to exception
+  $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  echo "Connected successfully";
+  }
+catch(PDOException $e)
+  {
+  echo "Connection failed: " . $e->getMessage();
+  }
 ?>
