@@ -48,7 +48,7 @@ catch(PDOException $e)
                                     <div class="row">
                                         <div class="col mt-0">
                                             <h5 class="card-title" style="color: black;">Artistes :
-                                                <?php echo($row['name']); ?>
+                                                <?php echo($row['Name']); ?>
                                             </h5>
                                         </div>
                                         <div class="col-auto">
