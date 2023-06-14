@@ -5,7 +5,7 @@ $password = "insi";
 $dbname = "insi";
 $port = 33066;
 
-$dsn = "mysql:host=$host;dbname=$dbname"; 
+$dsn = "mysql:host=$host;dbname=$dbname;port=$port"; 
 
 $sql = "SELECT * FROM Artists";
 
