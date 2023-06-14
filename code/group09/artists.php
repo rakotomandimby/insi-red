@@ -1,17 +1,16 @@
 <?php
-$servername = "vps-2018.rktmb.org";
+$host = "vps-2018.rktmb.org";
 $username = "insi";
 $password = "insi";
-$database = "insi";
+$dbname = "insi";
 $port = 33066;
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $database, $port);
+$dsn = "mysql:host=$host;dbname=$dbname"; 
 
-$sql = "SELECT * FROM Users";
+$sql = "SELECT * FROM Artists";
 
 try{
-   $pdo = new PDO($con, $username, $password);
+   $pdo = new PDO($dsn, $username, $password);
    $stmt = $pdo->query($sql);
    
    if($stmt === false){
@@ -22,12 +21,11 @@ try{
     echo $e->getMessage();
   }
 
-
 // Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-echo "Connected successfully";
+// if ($dsn->connect_error) {
+//   die("Connection failed: " . $conn->connect_error);
+// }
+// echo "Connected successfully";
 
 ?>
 <!DOCTYPE html>

@@ -26,17 +26,48 @@ if ($resultat->num_rows > 0){
 
     echo '</ol>';
 }
+ $dsn = "mysql:host=$host;dbname=$dbname"; 
+
+$sql = "SELECT * FROM Artists";
+
+try{
+   $pdo = new PDO($dsn, $username, $password);
+   $stmt = $pdo->query($sql);
+   
+   if($stmt === false){
+    die("Erreur");
+   }
+   
+  }catch (PDOException $e){
+    echo $e->getMessage();
+  }
+
+// Check connection
+// if ($dsn->connect_error) {
+//   die("Connection failed: " . $conn->connect_error);
+// }
+// echo "Connected successfully";
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-</head>
+<html>
+<head>Afficher la table users</head>
 <body>
-  
+ <h1>Liste des utilisateurs</h1>
+ <table>
+   <thead>
+     <tr>
+       <th>ID</th>
+       <th>Name</th>
+     </tr>
+   </thead>
+   <tbody>
+     <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
+     <tr>
+       <td><?php echo htmlspecialchars($row['id']); ?></td>
+       <td><?php echo htmlspecialchars($row['name']); ?></td>
+     </tr>
+     <?php endwhile; ?>
+   </tbody>
+ </table>
 </body>
-</html>
