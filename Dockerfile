@@ -1,4 +1,7 @@
 FROM archlinux:latest
+RUN pacman -Syyu             \
+    --noconfirm              
+
 RUN pacman -Sy               \
     --noconfirm              \
     php                      \ 
