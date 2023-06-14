@@ -1,7 +1,7 @@
 <?php
 $servername = "vps-2018.rktmb.org";
-$username = "root";
-$password = "";
+$username = "insi";
+$password = "insi";
 $database = "insi";
 $port = 33306;
 

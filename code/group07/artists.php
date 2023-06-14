@@ -1,17 +1,30 @@
-<?php
-$servername = "vps-2018.rktmb.org";
-$username = "root";
-$password = "";
-$database = "insi";
-$port = 33306;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artist</title>
+</head>
+<body>
+  <?php
+  $sql = "SELECT * FROM Artist";
+  $result = $connexion->query($sql);
+  if ($result->rowCount() > 0) {
+    echo "<table>";
+    echo "<tr><th>Name</th></tr>";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $database, $port);
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>" . $row["Name"] . "</td>";
+        echo "</tr>";
+    }
 
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+    echo "</table>";
+} else {
+    echo "Aucun résultat trouvé dans la table.";
 }
-echo "Connected successfully";
-
 ?>
+</body>
+</html>
+
