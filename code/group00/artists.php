@@ -1,17 +1,34 @@
 <?php
 $servername = "vps-2018.rktmb.org";
-$username = "root";
-$password = "";
+$username = "insi";
+$password = "insi";
 $database = "insi";
-$port = 33306;
+$port = 33066;
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $database, $port);
-
+$conn = new mysqli_connect($servername, $username, $password, $database, $port);
 // Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+if (!$conn) {
+    die("Connection failed: " . $conn->connect_error);
 }
 echo "Connected successfully";
+$sql = "SELECT Name, Id FROM Artist";
+$result = mysqli_query($conn, $sql);
 
+if (mysqli_num_rows($result) > 0) {
+    while($row = mysqli_fetch_assoc($result)) {
+	echo $row["Name"] . '   ' . $row["Id"] ; 
+    }
+} else {
+    echo "0 results";
+}
+mysqli_close($conn);
 ?>
+<html>
+    <head>
+	<title>Liste des artistes</title>
+    </head>
+    <body>
+	
+    </body>
+</html>
