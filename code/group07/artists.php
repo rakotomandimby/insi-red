@@ -1,17 +1,20 @@
 <?php
-$servername = "vps-2018.rktmb.org";
-$username = "root";
-$password = "";
-$database = "insi";
-$port = 33306;
+// Requête pour récupérer les valeurs de la table
+$sql = "SELECT * FROM Artist";
+$result = $conn->query($sql);
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $database, $port);
+if ($result->num_rows > 0) {
+    echo "<table>";
+    echo "<tr><th>Name</th></tr>";
 
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>" . $row["Name"] . "</td>"; 
+        echo "</tr>";
+    }
+
+    echo "</table>";
+} else {
+    echo "Aucun résultat trouvé dans la table.";
 }
-echo "Connected successfully";
-
 ?>
