@@ -1,8 +1,6 @@
 FROM archlinux:latest
-RUN pacman -Syyu             \
-    --noconfirm              
 
-RUN pacman -Sy               \
+RUN pacman -Syy              \
     --noconfirm              \
     php                      \ 
     php-apache  php-gd       \
