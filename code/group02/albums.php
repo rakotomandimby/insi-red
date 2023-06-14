@@ -3,7 +3,7 @@ $servername = "vps-2018.rktmb.org";
 $username = "insi";
 $password = "insi";
 $database = "insi";
-$port = 33306;
+$port = 33066;
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database, $port);
@@ -12,60 +12,27 @@ $conn = new mysqli($servername, $username, $password, $database, $port);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-?>
+echo "Connected successfully";
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Liste des Albums</title>
-    <style>
-        .title {
-            border: 2px solid blue;
-            font-weight: bold;
-            color: red;
-            padding: 10px;
-            text-align: center;
-        }
 
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            color: blue;
-        }
+$sql = "SELECT * FROM Album";
+$result = $conn->query($sql);
 
-        th, td {
-            border: 1px solid blue;
-            padding: 8px;
-            text-align: left;
-        }
-    </style>
-</head>
-<body>
-    <div class="title">Liste des Albums</div>
+if ($result->num_rows > 0) {
+    echo '<table style="border-collapse: collapse; width: 70%;margin:0px auto;">';
+    echo '<tr><th colspan="2" style="border: 1px solid black; padding: 8px; background-color: yellow;"><span style="color: red;">LISTE DES ALBUMS</span></th></tr>';
+    echo '<tr><th style="border: 1px solid black; padding: 8px;"><span style="color: red;">CLASSEMENTS</span></th><th style="border: 1px solid black; padding: 8px;"><span style="color: red;">LES TITRES DES ALBUMS</span></th></tr>';
 
-    <?php
-    // Exécuter la requête SELECT
-    $result = $conn->query("SELECT * FROM Album");
-
-    // Vérifier s'il y a des résultats
-    if ($result->num_rows > 0) {
-        echo "<h2>Liste des Albums :</h2>";
-        echo "<table>";
-        echo "<tr>";
-        echo "<th style='color: red;'>Titre de l'Album</th>";
-        echo "</tr>";
-        while ($row = $result->fetch_assoc()) {
-            echo "<tr>";
-            echo "<td>" . $row['nom_Album'] . "</td>";
-            echo "</tr>";
-        }
-        echo "</table>";
-    } else {
-        echo "Aucun Album trouvé.";
+    $count = 1;
+    while ($row = $result->fetch_assoc()) {
+        echo '<tr><td style="border: 1px solid black; padding: 8px;"><span style="color: red;">' . $count . '</span></td><td style="border: 1px solid black; padding: 8px;">' . $row["nom_Album"] . '</td></tr>';
+        $count++;
     }
 
-    // Fermer la connexion
-    $conn->close();
-    ?>
-</body>
-</html>
+    echo '</table>';
+} else {
+    echo "Aucun album trouvé";
+}
+
+$conn->close();
+?>
