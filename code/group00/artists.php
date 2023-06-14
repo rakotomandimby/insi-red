@@ -6,7 +6,7 @@ $database = "insi";
 $port = 33066;
 
 // Create connection
-$conn = new mysqli_connect($servername, $username, $password, $database, $port);
+$conn = mysqli_connect($servername, $username, $password, $database, $port);
 // Check connection
 if (!$conn) {
     die("Connection failed: " . $conn->connect_error);
