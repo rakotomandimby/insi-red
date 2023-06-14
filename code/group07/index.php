@@ -16,5 +16,5 @@ catch(PDOException $e)
 {
   echo "Connection failed: " . $e->getMessage();
 }
-include("artists.php");
-?>
+
+include('artists.php');
