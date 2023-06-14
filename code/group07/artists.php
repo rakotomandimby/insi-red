@@ -11,20 +11,13 @@
   $sql = "SELECT * FROM Artist";
   $result = $connexion->query($sql);
   $resultat=$result->fetchAll();
-  var_dump($resultat);
 
-//   if ($resultat->rowCount() > 0) {
-//     echo "<ul>";
-    
-//     // Afficher les résultats
-//     foreach($resultat as $row ) {
-//         echo "<li>" . $row['Name'] . "</li>";
-//     }
-
-//     echo "</ul>";
-// } else {
-//     echo "Aucun résultat trouvé dans la table.";
-// }
+  echo '<ul>';
+  foreach($resultat as $row){
+    echo '<li>'.$row['Name'].'</li>';
+  }
+  echo '</ul>';
+  
 ?>
 </body>
 </html>
