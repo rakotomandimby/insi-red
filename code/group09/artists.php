@@ -43,8 +43,8 @@ try{
    <tbody>
      <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
      <tr>
-       <td><?php echo htmlspecialchars($row['id']); ?></td>
-       <td><?php echo htmlspecialchars($row['name']); ?></td>
+       <td><?php echo htmlspecialchars($row['Id']); ?></td>
+       <td><?php echo htmlspecialchars($row['Name']); ?></td>
      </tr>
      <?php endwhile; ?>
    </tbody>
