@@ -1,52 +1,42 @@
 <?php
-$host = "vps-2018.rktmb.org";
+$servername = "vps-2018.rktmb.org";
 $username = "insi";
 $password = "insi";
-$dbname = "insi";
+$database = "insi";
 $port = 33066;
 
-$dsn = "mysql:host=$host;dbname=$dbname;port=$port"; 
-
-$sql = "SELECT * FROM Artists";
-
-try{
-   $pdo = new PDO($dsn, $username, $password);
-   $stmt = $pdo->query($sql);
-   
-   if($stmt === false){
-    die("Erreur");
-   }
-   
-  }catch (PDOException $e){
-    echo $e->getMessage();
-  }
+// Create connection
+$conn = new mysqli($servername, $username, $password, $database, $port);
 
 // Check connection
-// if ($dsn->connect_error) {
-//   die("Connection failed: " . $conn->connect_error);
-// }
-// echo "Connected successfully";
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+
+$sql = "SELECT * FROM Artist";
+$resultat = $conn->query($sql);
+
+if ($resultat->num_rows > 0){
+    echo '<ol>';
+
+      while($row = $resultat->fetch_assoc()){
+          echo '<li>'  .$row['Name'] . '</li>';
+        }
+
+    echo '</ol>';
+}
 
 ?>
 <!DOCTYPE html>
-<html>
-<head>Afficher la table users</head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
 <body>
- <h1>Liste des utilisateurs</h1>
- <table>
-   <thead>
-     <tr>
-       <th>ID</th>
-       <th>Name</th>
-     </tr>
-   </thead>
-   <tbody>
-     <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
-     <tr>
-       <td><?php echo htmlspecialchars($row['Id']); ?></td>
-       <td><?php echo htmlspecialchars($row['Name']); ?></td>
-     </tr>
-     <?php endwhile; ?>
-   </tbody>
- </table>
+  
 </body>
+</html>
