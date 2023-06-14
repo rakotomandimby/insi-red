@@ -1,5 +1,5 @@
 <?php
-$servername = "vps-2018.rktmb.org";
+$servername = "localhost";
 $username = "insi";
 $password = "insi";
 $database = "insi";
