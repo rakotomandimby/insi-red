@@ -12,11 +12,11 @@
   $result = $connexion->query($sql);
   if ($result->rowCount() > 0) {
     echo "<table>";
-    echo "<tr><th>Name</th></tr>";
+    echo "<tr><th>Colonne1</th></tr>";
 
-    while ($row = $result->fetch_assoc()) {
+    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
         echo "<tr>";
-        echo "<td>" . $row["Name"] . "</td>";
+        echo "<td>" . $row["colonne1"] . "</td>";
         echo "</tr>";
     }
 
