@@ -14,38 +14,24 @@ if ($conn->connect_error) {
 }
 // echo "Connected successfully";
 $sql = "SELECT Name FROM Artist";
-$result = mysqli_query($conn, $sql);
+$result = mysqli_query( $sql);
 
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
-    
     echo '<h1>Liste des Artistes : </h1>';
-    echo '<table>';
-    
-        echo '<thead>';
-            echo'<tr>';
-              echo '<th>ID</th>';
-              echo '<th>Name</th>';
-            echo'</tr>';
-        echo '</thead>';
-        echo '<tbody>';
-              echo '<tr>';
-              while($row = mysqli_fetch_assoc($result)){
-                // echo "<td> " . $row["Id"]. "</td>";
-                echo "<td> " . $row["Name"]. "</td>";
-                echo "<br>";
-              }
-              echo '</br>';
-        echo '<tbody>';
-
-    echo '</table>';
+    echo '<ul>';
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "<li> " . $row["Name"]. "</li>";
+    }
+    echo '</ul>';
   } else {
     echo "0 results";
 }
-mysqli_close($conn);
+
+// mysqli_close($conn);
 
 ?>
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>Afficher la table users</head>
 <body>
@@ -58,11 +44,22 @@ mysqli_close($conn);
      </tr>
    </thead>
    <tbody>
-     <tr>
-   
+     </tr>
+       <?php
+       if (mysqli_num_rows($result) > 0) {
+      // output data of each row
+      echo '<h1>Liste des Artistes : </h1>';
+      while($row = mysqli_fetch_assoc($result)) {
+       
+          echo "<td> " . $row["Name"]. "</td>";
+      }
+        } else {
+          echo "0 results";
+      }
+      ?>
      </tr>
      
    </tbody>
  </table>
-</body> -->
+</body>
 
