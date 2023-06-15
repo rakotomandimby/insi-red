@@ -17,15 +17,6 @@ if ($conn->connect_error) {
 $sql = "SELECT * FROM Artist";
 $resultat = $conn->query($sql);
 
-if ($resultat->num_rows > 0){
-    echo '<ul>';
-
-      while($row = $resultat->fetch_assoc()){
-          echo '<li>'  .$row['Name'] . '</li>';
-        }
-
-    echo '</ul>';
-}
 
 ?>
 <!DOCTYPE html>
@@ -45,7 +36,7 @@ if ($resultat->num_rows > 0){
           <h1>Crud</h1>
        </div>
 
-       
+
        <div class="row">
 
           <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -72,6 +63,21 @@ if ($resultat->num_rows > 0){
 
        </div>
 
+
+    <div class="container">
+        <?php 
+          
+            if ($resultat->num_rows > 0){
+                echo '<ul>';
+
+                  while($row = $resultat->fetch_assoc()){
+                      echo '<li>'  .$row['Name'] . '</li>';
+                    }
+
+                echo '</ul>';
+            }
+        ?> 
+    </div>
 
     </div>
 </body>
