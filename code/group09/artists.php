@@ -48,6 +48,18 @@ mysqli_close($conn);
      <tr>
        <td><?php echo htmlspecialchars($row['Id']); ?></td>
        <td><?php echo htmlspecialchars($row['Name']); ?></td>
+       <?php
+       if (mysqli_num_rows($result) > 0) {
+      // output data of each row
+      echo '<h1>Liste des Artistes : </h1>';
+      while($row = mysqli_fetch_assoc($result)) {
+       
+          echo "<td> " . $row["Name"]. "</td>";
+      }
+        } else {
+          echo "0 results";
+      }
+      ?>
      </tr>
      <?php endwhile; ?>
    </tbody>
