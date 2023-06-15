@@ -42,8 +42,9 @@ $resultat = $conn->query($sql);
                 echo '</div>';
                 echo '<div class="col-md-6">';
                     while($row = $resultat->fetch_assoc()){
-                      echo '<a class="btn btn-danger mx-3" href="delete_artist.php?id = '. $row['Id'] .' " >Delete</a>'; echo '<a class="btn btn-warning mx-3" href="update_artist.php?id = '. $row['Id'] .' " >Update</a>'; echo '<br>'; 
-                      echo '<br>';
+                      echo '<a class="btn btn-danger mx-3" href="delete_artist.php?id = '. $row['Id'] .' " >Delete</a>'; 
+                      echo '<a class="btn btn-warning mx-3" href="update_artist.php?id = '. $row['Id'] .' " >Update</a>';
+                      echo '<br>'; 
                     }
                 echo '</div>';
           }
