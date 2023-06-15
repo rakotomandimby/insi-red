@@ -1,24 +1,3 @@
-<?php
-$servername = "vps-2018.rktmb.org";
-$username = "insi";
-$password = "insi";
-$database = "insi";
-$port = 33066;
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $database, $port);
-
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
-
-$sql = "SELECT * FROM Artist";
-$resultat = $conn->query($sql);
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,7 +33,7 @@ $resultat = $conn->query($sql);
                     <a class="nav-link" href="#">Changer</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Listes des artistes</a>
+                    <a class="nav-link" href="listes_artists.php">Listes des artistes</a>
                   </li>
                 </ul>
               </div>
@@ -65,18 +44,7 @@ $resultat = $conn->query($sql);
 
 
     <div class="container">
-        <?php 
-          
-            if ($resultat->num_rows > 0){
-                echo '<ul>';
 
-                  while($row = $resultat->fetch_assoc()){
-                      echo '<li>'  .$row['Name'] . '</li>';
-                    }
-
-                echo '</ul>';
-            }
-        ?> 
     </div>
 
     </div>
