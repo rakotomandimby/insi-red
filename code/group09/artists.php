@@ -37,9 +37,11 @@ $resultat = $conn->query($sql);
                 echo '<div class="col-md-6">';
                     while($row = $resultat->fetch_assoc()){
                         echo $row['Name'] ; 
+                        echo '<a class="btn btn-danger mx-3" href="delete_artist.php?id = '. $row['Id'] .' " >Delete</a>'; 
                         echo '<br>';
                     }
                 echo '</div>';
+
                 echo '<div class="col-md-6">';
                     while($row = $resultat->fetch_assoc()){
                       echo '<a class="btn btn-danger mx-3" href="delete_artist.php?id = '. $row['Id'] .' " >Delete</a>'; 
@@ -49,7 +51,6 @@ $resultat = $conn->query($sql);
                 echo '</div>';
           }
         ?>
-
       </div>
     </div>
 </body>
