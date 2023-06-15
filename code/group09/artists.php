@@ -16,7 +16,17 @@ if ($conn->connect_error) {
 $sql = "SELECT Name FROM Artist";
 $result = mysqli_query($conn, $sql);
 
-
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    echo '<h1>Liste des Artistes : </h1>';
+    echo '<ul>';
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "<li> " . $row["Name"]. "</li>";
+    }
+    echo '</ul>';
+  } else {
+    echo "0 results";
+}
 
 mysqli_close($conn);
 
@@ -34,10 +44,7 @@ mysqli_close($conn);
      </tr>
    </thead>
    <tbody>
-     <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
      <tr>
-       <td><?php echo htmlspecialchars($row['Id']); ?></td>
-       <td><?php echo htmlspecialchars($row['Name']); ?></td>
        <?php
        if (mysqli_num_rows($result) > 0) {
       // output data of each row
@@ -51,7 +58,7 @@ mysqli_close($conn);
       }
       ?>
      </tr>
-     <?php endwhile; ?>
+     
    </tbody>
  </table>
 </body>
