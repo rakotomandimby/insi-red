@@ -34,7 +34,7 @@ $resultat = $conn->query($sql);
           
           if ($resultat->num_rows > 0){
                 while($row = $resultat->fetch_assoc()){
-                    echo $row['Name'] . '<a class="btn btn-danger" href="delete_artist.php?id = '. $row['Id'] .' " >Delete</a> <a class="btn btn-warning" href="update_artist.php?id = '. $row['Id'] .' " >Update</a>';
+                    echo $row['Name']; echo '<a class="btn btn-danger" href="delete_artist.php?id = '. $row['Id'] .' " >Delete</a>'; echo '<a class="btn btn-warning" href="update_artist.php?id = '. $row['Id'] .' " >Update</a>';
                 }
           }
         ?>
