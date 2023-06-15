@@ -30,24 +30,23 @@ $resultat = $conn->query($sql);
 <body>
     <div class="container">
       <div class="row">
+        <a href="artists.php" class="btn btn-primary">Retour</a>
 
-        <?php 
+        <div class="table-responsive">
+            <table class="table table-hover">
+            <?php 
           
-          if ($resultat->num_rows > 0){
-                echo '<div class="col">';
+                if ($resultat->num_rows > 0){
                     while($row = $resultat->fetch_assoc()){
-                        echo $row['Name'] ; 
-                        echo '<br>';
+                        echo '<tr>';
+                            echo '<td>' . $row['Name'].'<td>';
+                            echo '<td>'; echo '<a class="btn btn-warning mx-3" href="update_artist.php?id=' . $row['Id'] . '">Update</a>'; echo '<a class="btn btn-danger" href="delete_artist.php?id=' . $row['Id'] . '">Delete</a>';  echo '<td>';
+                        echo '</tr>';
                     }
-                echo '</div>';
-                echo '<div class="col">';
-                    while($row = $resultat->fetch_assoc()){
-                      echo '<a class="btn btn-danger mx-3" href="delete_artist.php?id = '. $row['Id'] .' " >Delete</a>'; echo '<a class="btn btn-warning mx-3" href="update_artist.php?id = '. $row['Id'] .' " >Update</a>'; echo '<br>'; 
-                      echo '<br>';
-                    }
-                echo '</div>';
-          }
-        ?>
+                }
+            ?>
+            </table>
+        </div>
 
       </div>
     </div>
