@@ -40,7 +40,7 @@ $resultat = $conn->query($sql);
                     while($row = $resultat->fetch_assoc()){
                         echo '<tr>';
                             echo '<td>' . $row['Name'].'<td>';
-                            echo '<td>'; echo '<a class="btn btn-warning" href="update_artist.php?id=' . $row['Id'] . '">Update</a>'; echo '<a class="btn btn-danger" href="delete_artist.php?id=' . $row['Id'] . '">Delete</a>';  echo '<td>';
+                            echo '<td>'; echo '<a class="btn btn-warning mx-3" href="update_artist.php?id=' . $row['Id'] . '">Update</a>'; echo '<a class="btn btn-danger" href="delete_artist.php?id=' . $row['Id'] . '">Delete</a>';  echo '<td>';
                         echo '</tr>';
                     }
                 }
