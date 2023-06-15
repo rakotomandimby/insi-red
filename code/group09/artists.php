@@ -29,18 +29,18 @@ $resultat = $conn->query($sql);
 </head>
 <body>
     <div class="container">
+      <h1>Artist</h1>
       <div class="row">
-
         <?php 
           
           if ($resultat->num_rows > 0){
-                echo '<div class="col">';
+                echo '<div class="col-md-6">';
                     while($row = $resultat->fetch_assoc()){
                         echo $row['Name'] ; 
                         echo '<br>';
                     }
                 echo '</div>';
-                echo '<div class="col">';
+                echo '<div class="col-md-6">';
                     while($row = $resultat->fetch_assoc()){
                       echo '<a class="btn btn-danger mx-3" href="delete_artist.php?id = '. $row['Id'] .' " >Delete</a>'; echo '<a class="btn btn-warning mx-3" href="update_artist.php?id = '. $row['Id'] .' " >Update</a>'; echo '<br>'; 
                       echo '<br>';
