@@ -30,9 +30,6 @@
                     <a class="nav-link" href="#">Ajouter</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Changer</a>
-                  </li>
-                  <li class="nav-item">
                     <a class="nav-link" href="listes_artists.php">Listes des artistes</a>
                   </li>
                 </ul>
