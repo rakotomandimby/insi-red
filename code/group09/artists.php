@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 // echo "Connected successfully";
 $sql = "SELECT Name FROM Artist";
-$result = mysqli_query( $sql);
+$result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
@@ -50,7 +50,6 @@ if (mysqli_num_rows($result) > 0) {
       // output data of each row
       echo '<h1>Liste des Artistes : </h1>';
       while($row = mysqli_fetch_assoc($result)) {
-       
           echo "<td> " . $row["Name"]. "</td>";
       }
         } else {
