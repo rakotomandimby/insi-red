@@ -1,19 +1,5 @@
 <?php
-$servername = "vps-2018.rktmb.org";
-$username = "insi";
-$password = "insi";
-$database = "insi";
-$port = 33066;
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $database, $port);
-
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
-
+require "bdd.php";
 $sql = "SELECT * FROM Artist";
 $resultat = $conn->query($sql);
 
@@ -30,7 +16,7 @@ $resultat = $conn->query($sql);
 <body>
     <div class="container">
       <div class="row">
-        <a href="artists.php" class="btn btn-primary">Retour</a>
+        <a href="artists.php" class="btn btn-primary">Lite des Artists</a>
 
         <div class="table-responsive">
             <table class="table table-hover">
