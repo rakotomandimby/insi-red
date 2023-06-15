@@ -12,53 +12,44 @@ $conn = new mysqli($servername, $username, $password, $database, $port);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-// echo "Connected successfully";
-$sql = "SELECT Name FROM Artist";
-$result = mysqli_query($conn, $sql);
 
-if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-    echo '<h1>Liste des Artistes : </h1>';
-    echo '<ul>';
-    while($row = mysqli_fetch_assoc($result)) {
-        echo "<li> " . $row["Name"]. "</li>";
-    }
-    echo '</ul>';
-  } else {
-    echo "0 results";
-}
 
-// mysqli_close($conn);
+$sql = "SELECT * FROM Artist";
+$resultat = $conn->query($sql);
+
 
 ?>
 <!DOCTYPE html>
-<html>
-<head>Afficher la table users</head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listes d'artistes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
 <body>
- <h1>Liste des utilisateurs</h1>
- <table>
-   <thead>
-     <tr>
-       <th>ID</th>
-       <th>Name</th>
-     </tr>
-   </thead>
-   <tbody>
-     </tr>
-       <?php
-       if (mysqli_num_rows($result) > 0) {
-      // output data of each row
-      echo '<h1>Liste des Artistes : </h1>';
-      while($row = mysqli_fetch_assoc($result)) {
-          echo "<td> " . $row["Name"]. "</td>";
-      }
-        } else {
-          echo "0 results";
-      }
-      ?>
-     </tr>
-     
-   </tbody>
- </table>
-</body>
+    <div class="container">
+      <div class="row">
 
+        <?php 
+          
+          if ($resultat->num_rows > 0){
+                echo '<div class="col">';
+                    while($row = $resultat->fetch_assoc()){
+                        echo $row['Name'] ; 
+                        echo '<br>';
+                    }
+                echo '</div>';
+                echo '<div class="col">';
+                    while($row = $resultat->fetch_assoc()){
+                      echo '<a class="btn btn-danger mx-3" href="delete_artist.php?id = '. $row['Id'] .' " >Delete</a>'; echo '<a class="btn btn-warning mx-3" href="update_artist.php?id = '. $row['Id'] .' " >Update</a>'; echo '<br>'; 
+                      echo '<br>';
+                    }
+                echo '</div>';
+          }
+        ?>
+
+      </div>
+    </div>
+</body>
+</html>
