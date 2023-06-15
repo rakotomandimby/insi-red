@@ -29,16 +29,15 @@ $resultat = $conn->query($sql);
 </head>
 <body>
     <div class="container">
-        <div class="col-md-6">
         <?php 
           
           if ($resultat->num_rows > 0){
                 while($row = $resultat->fetch_assoc()){
                     echo $row['Name']; echo '<a class="btn btn-danger mx-3" href="delete_artist.php?id = '. $row['Id'] .' " >Delete</a>'; echo '<a class="btn btn-warning mx-3" href="update_artist.php?id = '. $row['Id'] .' " >Update</a>'; echo '<br>'; 
+                    echo '<br>';  
                 }
           }
         ?>
-        </div> 
     </div>
 </body>
 </html>
