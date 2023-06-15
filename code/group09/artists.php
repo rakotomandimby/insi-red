@@ -31,7 +31,7 @@ if (mysqli_num_rows($result) > 0) {
         echo '<tbody>';
               echo '<tr>';
               while($row = mysqli_fetch_assoc($result)){
-                echo "<td> " . $row["Id"]. "</td>";
+                // echo "<td> " . $row["Id"]. "</td>";
                 echo "<td> " . $row["Name"]. "</td>";
                 echo "<br>";
               }
