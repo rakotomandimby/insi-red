@@ -15,6 +15,7 @@
 
     $id = 0;
     if(!empty($_GET['id'])){
+        echo $_GET['id'];
         if($_POST['id'] && $_POST['yes']){
             $id = $_GET['id'];
             $sql = "DELETE FROM Artist WHERE Id = '.$id.' ";
@@ -39,7 +40,7 @@
             <form class="form-horizontal" action="delete_artist.php" method="post">
                 <input type="hidden" name="id" value="<?php echo $id;?>">
                 Are you sure to delete?
-                <div class="form-actions">
+                <div class="form-actions my-3">
                     <button type="submit" class="btn btn-danger" name="yes">Yes</button>
                     <a href="artists.php" class="btn"></a>
                 </div>
